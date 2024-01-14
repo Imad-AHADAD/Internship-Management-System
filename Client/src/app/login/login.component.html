@@ -1,0 +1,24 @@
+<div class="main">
+
+  <!-- Popup login form -->
+  <div class="content">
+    <div class="text">
+      LOG IN
+    </div>
+    <div class="text-danger" *ngIf="erromessage">{{erromessage}}</div>
+    <form [formGroup]="form" (ngSubmit)="entre()" >
+
+      <label for="username">Username</label>
+      <input type="text" placeholder="Email or Phone" id="username" formControlName="username" >
+
+      <label for="password">Password</label>
+      <input type="password" placeholder="Password" id="password" formControlName="password">
+
+      <!-- Create a login button in the popup login form -->
+      <button class="submit mt-3 btn btn-primary ml-9" >Log In</button>
+
+    </form>
+
+  </div>
+</div>
+

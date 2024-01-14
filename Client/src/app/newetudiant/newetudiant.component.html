@@ -1,0 +1,91 @@
+
+<div class="container align-content-center">
+  <header class="form-title mt-3">Registration</header>
+
+  <form   [formGroup]="newetudiantformgroup" (ngSubmit)="ajouteretudiant(newetudiantformgroup.value)" class="custom-form">
+    <div class="form first">
+      <div class="details personal">
+        <span class="title">Personal Details</span>
+
+        <div class="fields">
+          <div class="input-field">
+            <label >Nom</label>
+            <input type="text" placeholder="Enter your name" formControlName="nom"required >
+          </div>
+
+          <div class="input-field">
+            <label>Date de naissance</label>
+            <input type="date" placeholder="Enter birth date" formControlName="dateNaissance" required>
+          </div>
+
+          <div class="input-field">
+            <label>ville</label>
+            <input type="text" placeholder="Enter ville" id="email" formControlName="ville" required>
+          </div>
+
+          <div class="input-field">
+            <label>Prénom</label>
+            <input type="text" placeholder="Enter mobile number" formControlName="prenom" required>
+          </div>
+
+          <div class="input-field">
+            <label>Gender</label>
+            <input type="text" placeholder="Enter your gender" formControlName="sexe" required>
+          </div>
+
+          <div class="input-field">
+            <label>Code postal</label>
+            <input type="number" placeholder="Enter your ccupation" formControlName="codepostale" required>
+          </div>
+
+        </div>
+      </div>
+
+
+      <div class="details ID">
+        <span class="title">Identity Details</span>
+
+        <div class="fields">
+          <div class="input-field">
+            <label>ID </label>
+            <input type="number" placeholder="Enter ID" formControlName="id"required>
+          </div>
+
+          <div class="input-field">
+            <label>Numero tel</label>
+            <input type="text" placeholder="Enter ID number" formControlName="numeroTelephone" required>
+          </div>
+
+          <div class="input-field">
+            <label>Adresse</label>
+            <input type="text" placeholder="Enter issued authority" formControlName="adresse" required>
+          </div>
+
+          <div class="input-field" formGroupName="promotion">
+            <label>Promotion</label>
+            <input type="number" placeholder="Enter promotion" formControlName="année" required>
+          </div>
+
+          <div class="input-field">
+            <label>mention</label>
+            <input type="text" placeholder="Enter mention" formControlName="mention" required>
+          </div>
+          <div class="input-field" formGroupName="professeur">
+            <label>Professeur ID</label>
+            <input type="text" formControlName="id" placeholder="Enter professeur ID" required>
+          </div>
+          <div class="input-field" formGroupName="tuteur">
+            <label>Tuteur ID</label>
+            <input type="number" placeholder="Enter tuteur" formControlName="id" required>
+          </div>
+        </div>
+        <div class="input-field">
+          <button [disabled]="!this.newetudiantformgroup.valid"  type="submit" class="nextBtn">
+            <span class="btnText">Ajouter</span>
+            <i class="uil uil-navigator"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>

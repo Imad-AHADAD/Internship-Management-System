@@ -1,0 +1,54 @@
+
+<div class="container align-content-center">
+  <header class="form-title mt-3">Registration de stage</header>
+
+  <form   [formGroup]="newstageformgroup" (ngSubmit)="ajouterstage(newstageformgroup.value)" class="custom-form">
+    <div class="form first">
+      <div class="details personal">
+        <span class="title">Personal Details</span>
+
+        <div class="fields">
+          <div class="input-field">
+            <label>Type de stage</label>
+            <input type="text" placeholder="Enter le type de stage" formControlName="typeStage"required >
+          </div>
+          <div class="input-field">
+            <label>Compte rendu</label>
+            <input type="text" placeholder="Enter le compte rendu" formControlName="compteRendu"required >
+          </div>
+          <div class="input-field">
+            <label>dureeSemaines</label>
+            <input type="number" placeholder="Enter durée de semaines" formControlName="dureeSemaines" required>
+          </div>
+
+          <div class="input-field">
+            <label>competences</label>
+            <input type="text" placeholder="entrer competences" id="email" formControlName="competences" required>
+          </div>
+
+          <div class="input-field" formGroupName="tuteur">
+            <label>tuteur</label>
+            <input type="text" placeholder="Entrer le tuteur" formControlName="id" required>
+          </div>
+
+          <div class="input-field" formGroupName="entreprise">
+            <label>Entreprise</label>
+            <input type="number" placeholder="Entrer entreprise" formControlName="id" required>
+          </div>
+
+          <div class="input-field" formGroupName="etudiante">
+            <label>Etudiant</label>
+            <input type="number" placeholder="Entrer etudiant" formControlName="id" required>
+          </div>
+          <div class="input-field position-relative">
+            <button [disabled]="!this.newstageformgroup.valid"  type="submit"  class="nextBtn">
+              <span class="btnText">Ajouter</span>
+              <i class="uil uil-navigator"></i>
+            </button>
+            </div>
+        </div>
+      </div>
+      </div>
+  </form>
+</div>
+

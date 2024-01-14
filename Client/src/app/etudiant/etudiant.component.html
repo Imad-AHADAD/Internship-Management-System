@@ -1,0 +1,51 @@
+<div *ngIf="etudiants" class="container mt-2">
+  <div>
+    <button class="btn btn-outline-primary float-end mb-2" (click)="router.navigateByUrl('/admin/newetudiant')">
+      <i class="bi bi-person-add fa-sm"></i>
+    </button>
+    <div class="card-header"><h3>Etudiants</h3>
+      <div class="card-header mt-3 ">
+        <form class="mb-3" [formGroup]="formgroup" (ngSubmit)="handleSearchEtudiant()">
+            <div class="input-group">
+              <label class="input-group-text">ID de étudiant</label>
+              <input type="text" formControlName="keyword" class="form-control">
+              <button class="btn btn-info">
+                <i class="bi bi-search"></i>
+              </button>
+            </div>
+        </form>
+        <table  class="table table-striped">
+          <thead>
+          <tr>
+            <td>ID</td>
+            <td>nom</td>
+            <td class="align-top">prenom</td>
+            <td>sexe</td>
+            <td></td>
+            <td></td>
+          </tr>
+          </thead>
+          <tbody>
+          <tr *ngFor="let c of etudiants">
+            <td>{{c.id}}</td>
+            <td>{{c.nom}}</td>
+            <td>{{c.prenom}}</td>
+            <td>{{c.sexe}}</td>
+            <td>
+              <button (click)="router.navigateByUrl('/admin/newetudiant')" class="btn btn-primary">
+                <i class="bi bi-plus-circle"></i>
+              </button>
+            </td>
+            <td>
+              <button (click)="Deleteetudiant(c)" class="btn btn-danger">
+                <i class="bi bi-trash"></i>
+              </button>
+            </td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+
